@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Estratégico - Dra. Soray Abbud</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-dark: #4A4646;
+            --brand-rose: #D4A392;
+            --brand-bg: #FDFBF7;
+            --brand-gray: #67686A;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--brand-bg);
+            color: var(--brand-dark);
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Página 1: Capa */
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            position: relative;
+            background: var(--brand-bg);
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .cover {
+            text-align: center;
+            border: 1px solid rgba(212, 163, 146, 0.3);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background: linear-gradient(to bottom, #FDFBF7, #f7f3eb);
+        }
+
+        .cover-logo {
+            width: 250px;
+            margin-bottom: 40px;
+            mix-blend-multiply;
+        }
+
+        .cover h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 32pt;
+            color: var(--brand-dark);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cover p {
+            font-size: 14pt;
+            color: var(--brand-rose);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .cover-bottom {
+            position: absolute;
+            bottom: 40mm;
+            text-align: center;
+            width: calc(100% - 40mm);
+        }
+
+        .cover-bottom p {
+            font-size: 10pt;
+            color: var(--brand-gray);
+            letter-spacing: 1px;
+        }
+
+        /* Página 2: Conteúdo */
+        .content-page {
+            justify-content: flex-start;
+            padding: 15mm 20mm;
+        }
+
+        .header {
+            border-bottom: 1px solid var(--brand-rose);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 20pt;
+            color: var(--brand-dark);
+        }
+
+        .header span {
+            font-size: 8pt;
+            color: var(--brand-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .intro {
+            font-size: 11.5pt;
+            color: var(--brand-gray);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .strategy-box {
+            background: white;
+            border: 1px solid rgba(212, 163, 146, 0.2);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .strategy-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .strategy-number {
+            width: 35px;
+            height: 35px;
+            background: var(--brand-rose);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel', serif;
+            font-size: 14pt;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .strategy-box h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 14pt;
+            color: var(--brand-dark);
+        }
+
+        .strategy-box p {
+            font-size: 11pt;
+            color: var(--brand-gray);
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .script-box {
+            background: #fafafa;
+            border-left: 3px solid var(--brand-rose);
+            padding: 12px 15px;
+            font-style: italic;
+            font-size: 10.5pt;
+            color: var(--brand-dark);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .thank-you {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 11pt;
+            color: var(--brand-dark);
+            font-style: italic;
+        }
+
+        .notice-box {
+            background: #fdf5f3;
+            border: 1px dashed var(--brand-rose);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .notice-box h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 11pt;
+            color: var(--brand-dark);
+            margin-bottom: 3px;
+        }
+
+        .notice-box p {
+            font-size: 9pt;
+            color: var(--brand-gray);
+            line-height: 1.4;
+        }
+
+        .footer {
+            margin-top: auto;
+            text-align: center;
+            border-top: 1px solid rgba(212, 163, 146, 0.2);
+            padding-top: 15px;
+            font-size: 8pt;
+            color: var(--brand-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .mlee-signature {
+            font-weight: 600;
+            color: var(--brand-rose);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CAPA -->
+    <div class="page">
+        <div class="cover">
+            <!-- Tentar carregar logo local se existir, caso contrário fallback text -->
+            <img src="logo-soray.png" alt="Dra. Soray Abbud" class="cover-logo" onerror="this.style.display='none'">
+            <h1>Manual Estratégico</h1>
+            <p>Aceleração Digital</p>
+            
+            <div class="cover-bottom">
+                <p>Estratégias de Posicionamento e Vendas para sua Vitrine Digital</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 2: ESTRATÉGIAS -->
+    <div class="page content-page">
+        <div class="header">
+            <h2>Como usar sua Vitrine</h2>
+            <span>Odontologia Estética</span>
+        </div>
+
+        <p class="intro">
+            Sua Vitrine Digital não é apenas um site; é a sua principal ferramenta de posicionamento e vendas. Siga estas três estratégias para maximizar seus agendamentos *High Ticket*.
+        </p>
+
+        <!-- Estratégia 1 -->
+        <div class="strategy-box">
+            <div class="strategy-header">
+                <div class="strategy-number">1</div>
+                <h3>O seu Novo Cartão de Visitas</h3>
+            </div>
+            <p>
+                O primeiro passo é colocar o link da sua Vitrine na <strong>Bio do Instagram</strong>. Substitua links diretos do WhatsApp ou árvores de links genéricas. Assim, todo visitante do seu perfil passará por uma experiência visual de alto padrão e verá sua autoridade <em>antes</em> de falar com o atendimento.
+            </p>
+        </div>
+
+        <!-- Estratégia 2 -->
+        <div class="strategy-box">
+            <div class="strategy-header">
+                <div class="strategy-number">2</div>
+                <h3>Filtro de Curiosos no WhatsApp</h3>
+            </div>
+            <p>
+                Quando um paciente novo chamar perguntando "como funciona" ou "qual o preço", a sua recepção não deve passar o valor de imediato. Use a Vitrine para gerar desejo.
+            </p>
+            <div class="script-box">
+                <strong>Script para a Recepção:</strong><br>
+                "Olá! Que bom ter você aqui. A Dra. Soray preparou este portfólio oficial para você conhecer os nossos protocolos e ver as transformações que realizamos: [LINK DA VITRINE]. Dê uma olhada na seção de Resultados Reais e me avise qual tratamento mais te encantou!"
+            </div>
+        </div>
+
+        <!-- Estratégia 3 -->
+        <div class="strategy-box">
+            <div class="strategy-header">
+                <div class="strategy-number">3</div>
+                <h3>Aquecimento Pré-Consulta</h3>
+            </div>
+            <p>
+                Um dia antes da avaliação de um paciente novo, envie o link da Vitrine junto com a mensagem de confirmação de horário. A paciente lerá sua "Prova Social" e chegará à clínica no dia seguinte muito mais segura e sem objeções aos seus valores.
+            </p>
+        </div>
+
+        <div class="notice-box">
+            <h4>📌 Importante: Indexação no Google</h4>
+            <p>O Google leva de <strong>7 a 15 dias</strong> para ler e começar a exibir um novo site. O objetivo da sua Vitrine hoje não é atrair cliques orgânicos desconhecidos, mas atuar como um poderoso <strong>fechador de vendas</strong> para quem já chega ao seu perfil, elevando o valor percebido da clínica.</p>
+        </div>
+
+        <div class="thank-you">
+            <p>Foi uma honra desenvolver este projeto exclusivo para você.<br><strong>Obrigada pela confiança, Dra. Soray!</strong></p>
+        </div>
+
+        <div class="footer">
+            Desenvolvido por <span class="mlee-signature">MLee Digital</span> &bull; Posicionamento High Authority
+        </div>
+    </div>
+
+</body>
+</html>
